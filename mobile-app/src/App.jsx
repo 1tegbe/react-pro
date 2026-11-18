@@ -1,14 +1,18 @@
 import Pic from "../src/assets/Professional Portrait in Sunglasses.png"
-
 const navItems = ['About', 'My blog', 'Résumé']
-const socialLinks = ['LinkedIn', 'GitHub', 'Instagram']
+const cvUrl = 'https://docs.google.com/document/d/1JDYvHTq6fi92xRTdLz3PaTUSgV_OPeGp/edit'
+const socialLinks = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/itegbe-akinlade-968410401/' },
+  { name: 'GitHub', url: 'https://github.com/1tegbe' },
+  { name: 'Instagram', url: 'https://www.instagram.com/dev_itegbe/' },
+]
 
 const friends = [
-  { name: 'Friend 01', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80' },
-  { name: 'Friend 02', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80' },
-  { name: 'Friend 03', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80' },
-  { name: 'Friend 04', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80' },
-  { name: 'Friend 05', image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Adaeze Okafor', image: 'https://images.pexels.com/photos/10476512/pexels-photo-10476512.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { name: 'Chinedu Okafor', image: 'https://images.pexels.com/photos/33044977/pexels-photo-33044977.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { name: 'Teniola Adebayo', image: 'https://images.pexels.com/photos/34107697/pexels-photo-34107697.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { name: 'Zainab Musa', image: 'https://images.pexels.com/photos/34747815/pexels-photo-34747815.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { name: 'Efe Omoregie', image: 'https://images.pexels.com/photos/13417077/pexels-photo-13417077.jpeg?auto=compress&cs=tinysrgb&w=900' },
 ]
 
 function App() {
@@ -20,17 +24,9 @@ function App() {
           <span className="brand-sub">Akinlade Divine || PORTFOLIO</span>
         </div>
 
-        <nav className="main-nav" aria-label="Main navigation">
-          {navItems.map((item) => (
-            <a href="#" key={item} className="nav-link">
-              {item}
-            </a>
-          ))}
-        </nav>
+       
 
-        <button type="button" className="talk-button">
-          Let&apos;s talk
-        </button>
+      
       </header>
 
       <main className="content">
@@ -51,15 +47,15 @@ function App() {
               A space for my journey, the things I care about, and the people who make it all worthwhile.
             </p>
 
-            <button type="button" className="primary-button">
+            <a href={cvUrl} className="primary-button" target="_blank" rel="noreferrer">
               Explore my CV
               <span aria-hidden="true">↓</span>
-            </button>
+            </a>
 
             <div className="social-row">
               {socialLinks.map((link) => (
-                <a href="#" key={link} className="social-link">
-                  {link}
+                <a href={link.url} key={link.name} className="social-link" target="_blank" rel="noreferrer">
+                  {link.name}
                   <span aria-hidden="true">↗</span>
                 </a>
               ))}
@@ -70,7 +66,7 @@ function App() {
             <div className="portrait-frame">
               <img
                 src={Pic}
-                alt="Portrait"
+                alt="Portrait of a Nigerian man"
               />
             </div>
             <div className="portrait-meta">
@@ -98,10 +94,10 @@ function App() {
             <h4>My curriculum vitae</h4>
             <p>Experience, education, and the skills I bring.</p>
 
-            <button type="button" className="secondary-button">
+            <a href={cvUrl} className="secondary-button" target="_blank" rel="noreferrer">
               View / download CV
               <span aria-hidden="true">↓</span>
-            </button>
+            </a>
           </div>
         </section>
 
@@ -134,8 +130,8 @@ function App() {
 
           <div className="contact-links">
             {socialLinks.map((link) => (
-              <a href="#" key={link} className="contact-item">
-                {link}
+              <a href={link.url} key={link.name} className="contact-item" target="_blank" rel="noreferrer">
+                {link.name}
                 <span aria-hidden="true">↗</span>
               </a>
             ))}
